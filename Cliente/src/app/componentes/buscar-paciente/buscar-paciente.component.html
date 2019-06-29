@@ -1,0 +1,42 @@
+<!--- pasasos de toma de hora--->
+<button type="button" class="btn btn-lg btn-primary margin-right" disabled>1</button>
+<button type="button" class="btn btn-secondary btn-lg margin-right" disabled>2</button>
+<button type="button" class="btn btn-secondary btn-lg margin-right" disabled>3</button>
+
+
+<div class="row">
+  <div class="col-md-4 offset-md-4">
+    <div class="card">
+      <div class="card-body">
+        <form action="">
+          <div class="form-grup">
+            <p>Ingrese su rut:</p>
+            <input type="text" name="Rut" [(ngModel)]= "paciente.id" placeholder="ej:123456789-0" class="form-control" autofocus>
+          </div>
+          <button class="btn btn-primary btn-block" (click)="getBuscarPaciente()">Buscar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!--- Tarejeta de paciente--->
+<div class="cold-md-4" *ngFor="let item of aux">
+  <div class="card text center">
+    <div class="class header bg-primary text-white" >
+      {{item.Nombre}}
+      <button class="btn btn-secondary float-right">
+      <i class="fas fa-user-edit "></i>
+      </button>
+    </div>
+    <div class="card body ">
+      <p>Rut: {{item.ID_P}}</p>
+      <p>Genero: {{item.Genero}}</p>
+      <p>Fecha de nacmiento: {{item.F_nacimiento}}</p>
+      <p>Prevencion: {{item.Isapre}}</p>
+      <p>Edad: {{item.Edad}}</p>
+      <a class="btn btn-success btn-lg margin-right" routerLink="/especialidad" routerlinkActive="active" role="button">Listo</a>
+    </div>
+
+  </div>
+</div>
+

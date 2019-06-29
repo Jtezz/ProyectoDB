@@ -1,0 +1,17 @@
+<div class="cold-md-4" *ngFor="let paciente of pacientes">
+  <div class="card text center">
+    <div class="class header bg-info text-white" >
+      {{paciente.Nombre}}
+      <button class="btn btn-secondary float-right">
+      <i class="fas fa-user-edit "></i>
+      </button>
+    </div>
+    <div class="card body ">
+      <p>Rut: {{paciente.ID_P}}</p>
+      <p>Genero: {{paciente.Genero}}</p>
+      <p>Fecha de nacmiento: {{paciente.F_nacimiento}}</p>
+      <p>Prevencion: {{paciente.Isapre}}</p>
+      <p>Edad:{{paciente.Edad}}</p>
+    </div>
+  </div>
+</div>

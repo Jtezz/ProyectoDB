@@ -1,0 +1,28 @@
+
+  <div class="col-md-4 offset-md-4">
+    <div class="card">
+      <div class="card-body">
+        <form action="">
+          <div class="form-grup">
+            <input type="text" name="Nombre" [(ngModel)]="medico.nombre" placeholder="Nombre Medico" class="form-control" autofocus>
+          </div>
+          <div class="form-grup">
+            <input type="number" min=1 max=3 name="Nombre" [(ngModel)]="medico.especialidad" placeholder="Especialidad" class="form-control" autofocus>
+          </div>
+          <div class="form-grup">
+            <input type="number" min=1 max=120 name="Nombre" [(ngModel)]="medico.edad" placeholder="Edad" class="form-control" autofocus>
+          </div>
+          <div class="form-grup">
+            <input type="date" name="Nombre" [(ngModel)]="medico.f_nacimiento" placeholder="Fecha Nacimiento" class="form-control" autofocus>
+          </div>
+          <div class="form-grup">
+            <input type="number" min=1 max=1 name="Nombre" [(ngModel)]="medico.contratado" placeholder="Contratado" class="form-control" autofocus>
+          </div>
+          <button class="btn btn-success btn-block" (click)="guardarmedico()">Agregar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
