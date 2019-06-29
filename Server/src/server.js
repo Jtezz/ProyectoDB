@@ -18,6 +18,7 @@ app.use(cors());
 app.use(require('./routes/medicos'));
 app.use(require('./routes/paciente'));
 app.use(require('./routes/consulta'));
+app.use(require('./routes/especialidad'));
 
 
 app.listen(app.get('port'),() => {

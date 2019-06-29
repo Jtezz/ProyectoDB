@@ -28,4 +28,5 @@ export class BuscarPacienteComponent implements OnInit {
 
     );
   }
+  
 }

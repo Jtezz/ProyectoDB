@@ -11,7 +11,7 @@ import { paciente } from 'src/app/modelos/paciente';
 export class PacienteFormComponent implements OnInit {
 
   @HostBinding("class") classes ="row";
-  paciente:paciente={
+  paciente:paciente={//paciente del tipo paciente
     id: '',
     nombre: '',
     genero:'',
