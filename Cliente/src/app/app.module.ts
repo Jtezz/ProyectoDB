@@ -11,13 +11,21 @@ import { MedicoFormComponent } from './componentes/medico-form/medico-form.compo
 import {MedicoService} from './servicios/medico.service';
 import { from } from 'rxjs';
 import { BuscarmedicosComponent } from './componentes/buscarmedicos/buscarmedicos.component';
+import { BuscarmedicosComponentEsp } from './componentes/buscarmedicoesp/buscarmedicoesp.component';
+import { HoraMedicogComponent } from './componentes/hora-medicog/hora-medicog.component';
+import{H_MgService} from './servicios/H_Mg.service';
+import { BuscarHMComponent } from './componentes/buscar-h-m/buscar-h-m.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     NavegacionComponent,
     MedicoFormComponent,
-    BuscarmedicosComponent
+    BuscarmedicosComponent,
+    BuscarmedicosComponentEsp,
+    HoraMedicogComponent,
+    BuscarHMComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -26,7 +34,8 @@ import { BuscarmedicosComponent } from './componentes/buscarmedicos/buscarmedico
     FormsModule
   ],
   providers: [
-    MedicoService
+    MedicoService,
+    H_MgService
   ],
   bootstrap: [AppComponent]
 })
