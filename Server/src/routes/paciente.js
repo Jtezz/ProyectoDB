@@ -3,8 +3,19 @@ const router = express.Router();
 
 
 //metodos
-router.get('/pacientes',(req,res) => {
-    mysqlConnection.query('select * from paciente limit 10',(err,rows,fields) =>{
+router.get('/paciente',(req,res) => {
+    mysqlConnection.query('select * from paciente',(err,rows,fields) =>{
+        if(!err){
+            res.json(rows);//entrega cada fila de la consulta
+        }else{
+            console.log(err);
+        }
+    });
+});
+
+router.get('/paciente/:id',(req,res) => {
+    const {id}=req.params;
+    mysqlConnection.query('select * from paciente where ID_P=?',[id],(err,rows,fields) =>{
         if(!err){
             res.json(rows);//entrega cada fila de la consulta
         }else{

@@ -26,5 +26,4 @@ export class BuscarmedicosComponent implements OnInit {
       err => console.log(err)
     )
   }
-
 }
