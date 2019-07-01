@@ -11,14 +11,11 @@
         <form action="">
           <div class="form-grup">
             <p>Escoja una especialidad:</p>
-            <select name="menu" placeholder="ej:Medicina general" class="form-control" autofocus>
-              <option value="0">...</option>
-              <option value=1>1-Medicina General</option>
-              <option value=2>2-Cardiología</option>
-              <option value=3>3-Odontología</option>
+            <select [(ngModel)]="especialidad" [ngModelOptions]="{standalone: true}" class="form-grup">
+              <option *ngFor="let especialidad of especialidades" [value]="especialidad.idEspecialidad" placeholder="ej:Medicina general">{{especialidad.Nombre_espe}}</option>
             </select>
+              <button class="btn btn-primary btn-block" (click)="getBuscarMeidocos()">Seleccionar</button>
           </div>
-          <button class="btn btn-primary btn-block" >Listo</button>
         </form>
       </div>
     </div>

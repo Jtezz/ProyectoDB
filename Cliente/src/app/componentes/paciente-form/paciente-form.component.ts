@@ -2,6 +2,8 @@ import { Component, OnInit, HostBinding } from '@angular/core';
 
 import{ PacienteService} from '../../servicios/paciente.service';
 import { paciente } from 'src/app/modelos/paciente';
+import {isapre}from 'src/app/modelos/isapre';
+import{ IsapresService} from 'src/app/servicios/isapres.service';
 
 @Component({
   selector: 'app-paciente-form',
@@ -20,9 +22,20 @@ export class PacienteFormComponent implements OnInit {
     f_nacimiento: null
 
   };
-  constructor(private pacienteService:PacienteService) { }
+  isapres:any=[];
+
+  constructor(private pacienteService:PacienteService,
+              private isapreService:IsapresService) { }
 
   ngOnInit() {
+    this.isapreService.getIsapres().subscribe(
+      res => {
+        this.isapres=res;
+        console.log(res)
+      },
+      err =>console.error(err)
+    )
+    
   }
   addPaciente(){
     this.pacienteService.postPaciente(this.paciente).subscribe(

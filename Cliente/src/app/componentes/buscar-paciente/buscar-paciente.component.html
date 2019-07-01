@@ -31,7 +31,7 @@
     <div class="card body ">
       <p>Rut: {{item.ID_P}}</p>
       <p>Genero: {{item.Genero}}</p>
-      <p>Fecha de nacmiento: {{item.F_nacimiento}}</p>
+      <p>Fecha de nacmiento: {{item.F_nacimiento | date}}</p>
       <p>Prevencion: {{item.Isapre}}</p>
       <p>Edad: {{item.Edad}}</p>
       <a class="btn btn-success btn-lg margin-right" routerLink="/especialidad" routerlinkActive="active" role="button">Listo</a>

@@ -22,6 +22,7 @@ app.use(require('./routes/H_M'));
 app.use(require('./routes/especialidad'));
 app.use(require('./routes/hora'));
 app.use(require('./routes/examen'));
+app.use(require('./routes/isapre'));
 
 
 app.listen(app.get('port'),() => {

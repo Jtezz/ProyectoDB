@@ -20,10 +20,12 @@
         <div class="form-grup">
           <input type="date" name="F_nacimiento" [(ngModel)]="paciente.f_nacimiento" placeholder="Fecha Nacimiento" class="form-control" >
         </div>
-        <div class="form-grup">
-          <input type="number" min=1 max=10 name="isapre" [(ngModel)]="paciente.isapre" placeholder="Prevencion" class="form-control" >
+        <div class="from-gropu">
+          <select [(ngModel)]="paciente.isapre" [ngModelOptions]="{standalone: true}" class="form-grup">
+                <option *ngFor="let isapre of isapres" [value]="isapre.ID_Isapre">{{isapre.Descripcion}}</option>
+          </select>
         </div>
-        <button class="btn btn-success btn-block" (click)="addPaciente()">Agregar</button>
+        <a class="btn btn-success btn-lg margin-right" (click)="addPaciente()" routerLink="/especialidad" routerlinkActive="active" role="button">Agregar</a>
       </form>
     </div>
   </div>
