@@ -10,6 +10,7 @@ import { Validators } from '@angular/forms';
   styleUrls: ['./medico-form.component.css']
 })
 export class MedicoFormComponent implements OnInit {
+  agregado = false;
 
   @HostBinding('class') classes = 'col-md-4 offset-md-4';
 
@@ -27,6 +28,7 @@ export class MedicoFormComponent implements OnInit {
   }
 
   guardarmedico() {
+    this.agregado = true;
     this.medicoservicio.agregarmedico(this.medico).subscribe(
       res => {
         console.log(res);

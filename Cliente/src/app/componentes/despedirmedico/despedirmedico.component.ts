@@ -9,6 +9,7 @@ import { medicos } from '../../modelos/medicos'
   styleUrls: ['./despedirmedico.component.css']
 })
 export class DespedirmedicoComponent implements OnInit {
+  despedido= false;
 
   buscador:Buscador = {
     ID : null
@@ -27,6 +28,7 @@ export class DespedirmedicoComponent implements OnInit {
   }
   
   despedir(){
+    this.despedido= true;
     this.despedirservicio.despedirmedico(this.buscador.ID,this.medico).subscribe(
       res => {
         console.log(res);

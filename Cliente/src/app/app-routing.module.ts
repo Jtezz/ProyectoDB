@@ -17,7 +17,7 @@ import { BuscarmedHMComponent } from './componentes/buscarmed-h-m/buscarmed-h-m.
 const routes: Routes = [
 
   {
-    path: 'medico/agregar',//parametro path es el nombre de la ruta
+    path: 'admin/medico/agregar',//parametro path es el nombre de la ruta
     // otras estiquetas
     //redirecTo: redirecciona a esta url o ruta
     //con esto se debe agregar

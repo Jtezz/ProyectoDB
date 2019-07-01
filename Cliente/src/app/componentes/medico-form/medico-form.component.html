@@ -19,6 +19,9 @@
             <input type="number" min=1 max=1 name="Nombre" [(ngModel)]="medico.contratado" placeholder="Contratado" class="form-control" autofocus>
           </div>
           <button class="btn btn-success btn-block" (click)="guardarmedico()">Agregar</button>
+          <div *ngIf="agregado"   class="alert alert-success" role="alert">
+            Medico agregado
+          </div>
         </form>
       </div>
     </div>

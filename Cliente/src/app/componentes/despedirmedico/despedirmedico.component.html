@@ -7,6 +7,9 @@
             <input type="number" min=1 name="ID Medico" [(ngModel)]="buscador.ID" placeholder="ID Medico" class="form-control" autofocus>
           </div>
           <button class="btn btn-success btn-block" (click)="despedir()">Despedir</button>
+          <div *ngIf="despedido"   class="alert alert-success" role="alert">
+            Medico Despedido
+          </div>
         </form>
       </div>
     </div>

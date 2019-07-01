@@ -9,6 +9,9 @@
           <input type="date" name="Fecha" [(ngModel)]="Hora.Fecha" placeholder="Fecha" class="form-control" autofocus>
         </div>
         <button class="btn btn-success btn-block" (click)="guardarhora()">Agregar</button>
+        <div *ngIf="Horaagregada"   class="alert alert-success" role="alert">
+          Hora agregada
+        </div>
       </form>
     </div>
   </div>

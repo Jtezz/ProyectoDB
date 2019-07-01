@@ -10,6 +10,7 @@ import { HoraService } from '../../servicios/hora.service';
   styleUrls: ['./hora.component.css']
 })
 export class HoraComponent implements OnInit {
+  Horaagregada = false;
   
   Hora: Horas = {
     Bloque: ' ',
@@ -22,6 +23,7 @@ export class HoraComponent implements OnInit {
   }
 
   guardarhora() {
+    this.Horaagregada = true;
     this.Horaservicio.agregarhora(this.Hora).subscribe(
       res => {
         console.log(res);
