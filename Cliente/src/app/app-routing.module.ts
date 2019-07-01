@@ -12,7 +12,7 @@ import { HoraMedicogComponent } from './componentes/hora-medicog/hora-medicog.co
 import {BuscarHMComponent} from './componentes/buscar-h-m/buscar-h-m.component';
 import {EspecialidadComponent}from './componentes/especialidad/especialidad.component';
 import { HoraComponent } from './componentes/hora/hora.component';
-
+import {DespedirmedicoComponent} from './componentes/despedirmedico/despedirmedico.component';
 const routes: Routes = [
 
   {
@@ -54,6 +54,10 @@ const routes: Routes = [
   {
     path : "admin/agregar/hora",
     component: HoraComponent
+  },
+  {
+    path: "admin/medico/despedir",
+    component: DespedirmedicoComponent
   },
   {
     path:"buscar/medicos",
