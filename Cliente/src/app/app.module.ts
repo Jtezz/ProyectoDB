@@ -27,6 +27,7 @@ import { HoraComponent } from './componentes/hora/hora.component';
 import { DespedirmedicoComponent } from './componentes/despedirmedico/despedirmedico.component';
 import { BuscarmedHMComponent } from './componentes/buscarmed-h-m/buscarmed-h-m.component';
 import { GuardarExamenComponent } from './componentes/guardar-examen/guardar-examen.component';
+import { BuscarMedicoEspecComponent } from './componentes/buscar-medico-espec/buscar-medico-espec.component';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { GuardarExamenComponent } from './componentes/guardar-examen/guardar-exa
     DespedirmedicoComponent,
     BuscarmedHMComponent,
     GuardarExamenComponent,
+    BuscarMedicoEspecComponent,
   ],
   imports: [
     CommonModule,
