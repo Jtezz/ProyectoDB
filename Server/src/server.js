@@ -18,9 +18,10 @@ app.use(cors());
 app.use(require('./routes/medicos'));
 app.use(require('./routes/paciente'));
 app.use(require('./routes/consulta'));
-app.use(require('./routes/H_M'))
+app.use(require('./routes/H_M'));
 app.use(require('./routes/especialidad'));
 app.use(require('./routes/hora'));
+app.use(require('./routes/examen'));
 
 
 app.listen(app.get('port'),() => {
