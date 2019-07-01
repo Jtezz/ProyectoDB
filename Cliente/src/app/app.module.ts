@@ -23,6 +23,7 @@ import { EspecialidadComponent } from './componentes/especialidad/especialidad.c
 import { HoraMedicogComponent } from './componentes/hora-medicog/hora-medicog.component';
 import{H_MgService} from './servicios/H_Mg.service';
 import { BuscarHMComponent } from './componentes/buscar-h-m/buscar-h-m.component';
+import { HoraComponent } from './componentes/hora/hora.component';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { BuscarHMComponent } from './componentes/buscar-h-m/buscar-h-m.component
     EspecialidadComponent,
     HoraMedicogComponent,
     BuscarHMComponent,
+    HoraComponent,
   ],
   imports: [
     CommonModule,
