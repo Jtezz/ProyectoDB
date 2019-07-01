@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 
 import {medicos} from '../modelos/medicos';
+import { EspecialidadComponent } from '../componentes/especialidad/especialidad.component';
 
 @Injectable({
   providedIn: 'root'
@@ -20,5 +21,8 @@ export class MedicoService {
   }
   eliminarmedico(id:number){
     return this.http.put(`${this.API_URI}/medicos/despedir`,id);
+  }
+  buscarEspec(id:number){
+    return this.http.get(`${this.API_URI}/buscar/medicos/espec/${id}`)
   }
 }
