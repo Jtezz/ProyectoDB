@@ -18,4 +18,8 @@ export class H_MgService {
     return this.http.get(`${this.API_URI}/admin/b_h_m/${HM}`);
 
   }
+  buscarmedH_M(HM : number){
+    return this.http.get(`${this.API_URI}/admin/bm_h_m/${HM}`);
+
+  }
 }

@@ -28,4 +28,18 @@ router.get('/admin/b_h_m/:ID',(req,res) => {
     });
 
 });
+router.get('/admin/bm_h_m/:ID',(req,res) => {
+    const {ID}=req.params;
+    mysqlConnection.query('select hora.Bloque,hora.Fecha,medico.Nombre from medico,hora,(select * from horario_medico where ID_MED=?) AS com where com.ID_H=hora.idHora and com.ID_MED=medico.idMedico',[ID],(err,rows,fields) =>{
+        //if(row){
+          //  res. ('No esta en la base de datos...!');
+        //}
+        if(!err){
+            res.json(rows);//entrega cada fila de la consulta
+        }else{
+            console.log(err);
+        }
+    });
+
+});
 module.exports=router;

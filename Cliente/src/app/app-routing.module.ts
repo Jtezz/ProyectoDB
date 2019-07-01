@@ -13,6 +13,7 @@ import {BuscarHMComponent} from './componentes/buscar-h-m/buscar-h-m.component';
 import {EspecialidadComponent}from './componentes/especialidad/especialidad.component';
 import { HoraComponent } from './componentes/hora/hora.component';
 import {DespedirmedicoComponent} from './componentes/despedirmedico/despedirmedico.component';
+import { BuscarmedHMComponent } from './componentes/buscarmed-h-m/buscarmed-h-m.component';
 const routes: Routes = [
 
   {
@@ -62,6 +63,10 @@ const routes: Routes = [
   {
     path:"buscar/medicos",
     component: BuscarmedicosComponent
+  },
+  {
+    path:"admin/bm_h_m",
+    component: BuscarmedHMComponent
   }
   ];
 
