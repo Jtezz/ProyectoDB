@@ -14,4 +14,7 @@ export class IsapresService {
   getIsapres(){
     return this.http.get(`${this.API_URI}/isapre`);
   }
+  agregarEspec(HM : isapre){
+    return this.http.post(`${this.API_URI}/admin/guardar/isapre`,HM);
+  }
 }

@@ -29,6 +29,7 @@ import { BuscarmedHMComponent } from './componentes/buscarmed-h-m/buscarmed-h-m.
 import { GuardarExamenComponent } from './componentes/guardar-examen/guardar-examen.component';
 import { BuscarMedicoEspecComponent } from './componentes/buscar-medico-espec/buscar-medico-espec.component';
 import { GuardarEspecialidadComponent } from './componentes/guardar-especialidad/guardar-especialidad.component';
+import { GuardarIsapreComponent } from './componentes/guardar-isapre/guardar-isapre.component';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import { GuardarEspecialidadComponent } from './componentes/guardar-especialidad
     GuardarExamenComponent,
     BuscarMedicoEspecComponent,
     GuardarEspecialidadComponent,
+    GuardarIsapreComponent,
   ],
   imports: [
     CommonModule,
