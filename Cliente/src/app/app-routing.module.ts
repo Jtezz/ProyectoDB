@@ -16,6 +16,7 @@ import {DespedirmedicoComponent} from './componentes/despedirmedico/despedirmedi
 import { BuscarmedHMComponent } from './componentes/buscarmed-h-m/buscarmed-h-m.component';
 import { GuardarExamenComponent } from './componentes/guardar-examen/guardar-examen.component';
 import { BuscarMedicoEspecComponent } from './componentes/buscar-medico-espec/buscar-medico-espec.component';
+import {GuardarEspecialidadComponent} from './componentes/guardar-especialidad/guardar-especialidad.component'
 const routes: Routes = [
 
   {
@@ -77,6 +78,10 @@ const routes: Routes = [
   {
     path:"buscar/medicos/espec",
     component:BuscarMedicoEspecComponent
+  },
+  {
+    path:"admin/guardar/espec",
+    component:GuardarEspecialidadComponent
   }
   ];
 

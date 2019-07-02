@@ -10,6 +10,17 @@ router.get('/especialidades',(req,res) => {
         }
     });
 });
+router.post('/admin/guardar/espec',(req,res) =>{
+    const {des}=req.body;
+    const query=`INSERT INTO especialidad (Nombre_espe) values (?)`;
+    mysqlConnection.query(query,[des],(err,rows,fields) =>{
+        if(!err){
+            res.json({Status: 'especialidad guardado con exito!'});
+        }else{
+            console.log(err);
+        }
+        });
+    });
 
 
 const mysqlConnection=require('../database')//traemos la conexion con la db
