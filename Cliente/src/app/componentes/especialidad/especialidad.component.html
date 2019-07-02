@@ -3,7 +3,7 @@
 <button type="button" class="btn btn-primary btn-lg margin-right" disabled>2</button>
 <button type="button" class="btn btn-secondary btn-lg margin-right" disabled>3</button>
 
-
+<!--- Seleccionar especialidad para buscar medico-->
 <div class="row">
   <div class="col-md-4 offset-md-4">
     <div class="card">
@@ -11,10 +11,47 @@
         <form action="">
           <div class="form-grup">
             <p>Escoja una especialidad:</p>
-            <select [(ngModel)]="especialidad" [ngModelOptions]="{standalone: true}" class="form-grup">
+            <select [(ngModel)]="buscador.ID" [ngModelOptions]="{standalone: true}" class="form-grup">
               <option *ngFor="let especialidad of especialidades" [value]="especialidad.idEspecialidad" placeholder="ej:Medicina general">{{especialidad.Nombre_espe}}</option>
             </select>
-              <button class="btn btn-primary btn-block" (click)="getBuscarMeidocos()">Seleccionar</button>
+              <button class="btn btn-primary btn-block" (click)="buscarmedicoEspecialidad()">Seleccionar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--- Seleccionar medico para tomar una hora--->
+<div class="row">
+  <div class="col-md-4 offset-md-4">
+    <div class="card">
+      <div class="card-body">
+        <form action="">
+          <div class="form-grup">
+            <p>Escoja un medico:</p>
+            <select [(ngModel)]="buscador2.ID" [ngModelOptions]="{standalone: true}" class="form-grup">
+              <option *ngFor="let medico of medicos" [value]="medico.idMedico" >{{medico.Nombre}}</option>
+            </select>
+              <button class="btn btn-primary btn-block" (click)="escojerMedico()">Seleccionar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!---Seleccionar fecha y hora-->
+<div class="row" *ngIf="aux == true">
+  <div class="col-md-4 offset-md-4">
+    <div class="card">
+      <div class="card-body">
+        <form action="" >
+          <div class="form-grup">
+            <p>Escoja una Hora:</p>
+            <select [(ngModel)]="buscador3.ID" [ngModelOptions]="{standalone: true}" class="form-grup"><!--arreglar problema por que no funcoina--->
+              <option *ngFor="let hora of Horas" [value]="hora.idHora" >{{hora.id}}--{{hora.Fecha | date}} -bloque {{hora.Bloque}}</option>
+            </select>
+              <button class="btn btn-primary btn-block" (click)=prueba1()>Seleccionar</button>
           </div>
         </form>
       </div>
