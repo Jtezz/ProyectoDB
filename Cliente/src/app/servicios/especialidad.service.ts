@@ -13,4 +13,7 @@ export class EspecialidadService {
   getEspecialidades(){//retorna todas las especialidades
     return this.http.get(`${this.API_URI}/especialidades`);//son backtick de jav `` alt+parentecis
   }
+  agregarEspec(HM : especialidad){
+    return this.http.post(`${this.API_URI}/admin/guardar/espec`,HM);
+  }
 }
