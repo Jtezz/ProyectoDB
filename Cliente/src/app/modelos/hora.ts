@@ -1,4 +1,5 @@
 export interface Horas{
-    Bloque: string;
-    Fecha: Date;
+    idHora?:number;
+    Bloque?: string;
+    Fecha?: Date;
 }
