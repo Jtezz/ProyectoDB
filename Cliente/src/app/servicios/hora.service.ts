@@ -15,5 +15,8 @@ export class HoraService {
   agregarhora(Hora: Horas){
     return this.http.post(`${this.API_URI}/agregar/hora`,Hora);
   }
+  getHora(){//retorna todas las especialidades
+    return this.http.get(`${this.API_URI}/admin/hora`);//son backtick de jav `` alt+parentecis
+  }
 
 }

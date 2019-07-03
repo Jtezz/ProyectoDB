@@ -13,4 +13,13 @@ router.post('/admin/guardar/examen',(req,res) =>{
     }
     });
 });
+router.get('/examen',(req,res) => {
+    mysqlConnection.query('select * from examenes',(err,rows,fields) =>{
+        if(!err){
+            res.json(rows);//entrega cada fila de la consulta
+        }else{
+            console.log(err);
+        }
+    });
+});
 module.exports=router;//para exportar las rutas

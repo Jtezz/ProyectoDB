@@ -31,6 +31,7 @@ import { BuscarMedicoEspecComponent } from './componentes/buscar-medico-espec/bu
 import { GuardarEspecialidadComponent } from './componentes/guardar-especialidad/guardar-especialidad.component';
 import { GuardarIsapreComponent } from './componentes/guardar-isapre/guardar-isapre.component';
 import { BuscarExamenComponent } from './componentes/buscar-examen/buscar-examen.component';
+import { BuscarHoraComponent } from './componentes/buscar-hora/buscar-hora.component';
 
 
 @NgModule({
@@ -54,6 +55,7 @@ import { BuscarExamenComponent } from './componentes/buscar-examen/buscar-examen
     GuardarEspecialidadComponent,
     GuardarIsapreComponent,
     BuscarExamenComponent,
+    BuscarHoraComponent,
   ],
   imports: [
     CommonModule,
