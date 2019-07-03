@@ -13,5 +13,8 @@ export class examenService {
   agregarExamen(HM : Examen){
     return this.http.post(`${this.API_URI}/admin/guardar/examen`,HM);
   }
+  getExamen(){//retorna todas las especialidades
+    return this.http.get(`${this.API_URI}/examen`);//son backtick de jav `` alt+parentecis
+  }
   
 }

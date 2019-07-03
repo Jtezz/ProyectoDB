@@ -26,7 +26,7 @@ router.get('/paciente/:id',(req,res) => {
 
 router.post('/paciente',(req,res) =>{
     const {id,nombre,genero,edad,isapre,f_nacimiento}=req.body;
-    const query=`INSERT INTO paciente (ID_P,nombre,genero,edad,ISAPRE,F_nacimiento) value (?,?,?,?,?,?)`;
+    const query=`INSERT INTO paciente (ID_P,nombre,genero,telefono,ISAPRE,F_nacimiento,email) value (?,?,?,?,?,?,?)`;
     mysqlConnection.query(query,[id,nombre,genero,edad,isapre,f_nacimiento],(err,rows,fields) =>{
     if(!err){
         console.log('Paciente agregado con exito!');

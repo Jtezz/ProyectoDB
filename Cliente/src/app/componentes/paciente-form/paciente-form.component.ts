@@ -18,9 +18,10 @@ export class PacienteFormComponent implements OnInit {
     id: '',
     nombre: '',
     genero:'',
-    edad: null,
+    tel: null,
     isapre:null,
-    f_nacimiento: null
+    f_nacimiento: null,
+    Email:null
 
   };
   aux:buscadorP={
