@@ -13,6 +13,7 @@ import { BuscarmedicosComponent } from './componentes/buscarmedicos/buscarmedico
 import { PacienteComponent } from './componentes/paciente/paciente.component';
 import { NavegacionComponent } from './componentes/navegacion/navegacion.component';
 import { PacienteFormComponent } from './componentes/paciente-form/paciente-form.component';
+
 //servicios
 import {PacienteService} from './servicios/paciente.service';
 import {MedicoService} from './servicios/medico.service';
@@ -30,6 +31,7 @@ import { GuardarExamenComponent } from './componentes/guardar-examen/guardar-exa
 import { BuscarMedicoEspecComponent } from './componentes/buscar-medico-espec/buscar-medico-espec.component';
 import { GuardarEspecialidadComponent } from './componentes/guardar-especialidad/guardar-especialidad.component';
 import { GuardarIsapreComponent } from './componentes/guardar-isapre/guardar-isapre.component';
+import { ConsultaComponent } from './componentes/consulta/consulta.component';
 import { BuscarExamenComponent } from './componentes/buscar-examen/buscar-examen.component';
 import { BuscarHoraComponent } from './componentes/buscar-hora/buscar-hora.component';
 
@@ -54,8 +56,9 @@ import { BuscarHoraComponent } from './componentes/buscar-hora/buscar-hora.compo
     BuscarMedicoEspecComponent,
     GuardarEspecialidadComponent,
     GuardarIsapreComponent,
+    ConsultaComponent,
     BuscarExamenComponent,
-    BuscarHoraComponent,
+    BuscarHoraComponent
   ],
   imports: [
     CommonModule,
