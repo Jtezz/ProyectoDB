@@ -20,6 +20,7 @@
   </div>
 </div>
 <!--- Tarejeta de paciente--->
+
 <div class="cold-md-4" *ngFor="let item of aux">
   <div class="card text center">
     <div class="class header bg-primary text-white" >
@@ -34,6 +35,7 @@
       <p>Fecha de nacmiento: {{item.F_nacimiento | date}}</p>
       <p>Prevencion: {{item.Isapre}}</p>
       <p>Edad: {{item.Edad}}</p>
+      <app-consulta [id]="aux"></app-consulta>
       <a class="btn btn-success btn-lg margin-right" routerLink="/especialidad" routerlinkActive="active" role="button">Listo</a>
     </div>
 

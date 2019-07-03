@@ -1,9 +1,10 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit, HostBinding,Input} from '@angular/core';
 
 import{ PacienteService} from '../../servicios/paciente.service';
 import { paciente } from 'src/app/modelos/paciente';
 import {isapre}from 'src/app/modelos/isapre';
 import{ IsapresService} from 'src/app/servicios/isapres.service';
+import { buscadorP } from 'src/app/modelos/buscadorP';
 
 @Component({
   selector: 'app-paciente-form',
@@ -22,6 +23,9 @@ export class PacienteFormComponent implements OnInit {
     f_nacimiento: null
 
   };
+  aux:buscadorP={
+    id:this.paciente.id
+  }
   isapres:any=[];
 
   constructor(private pacienteService:PacienteService,

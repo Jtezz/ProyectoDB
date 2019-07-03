@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Input} from '@angular/core';
 
 import{ PacienteService} from '../../servicios/paciente.service';
 import{buscadorP}from '../../modelos/buscadorP';
@@ -8,11 +8,14 @@ import{buscadorP}from '../../modelos/buscadorP';
   styleUrls: ['./buscar-paciente.component.css']
 })
 export class BuscarPacienteComponent implements OnInit {
-  paciente:buscadorP={
+  public paciente:buscadorP={
     id:null
   };
   
-  aux:any=[];
+  public aux:any=[];
+  public prueba:string='Informarcion de paciente';
+
+
   constructor(private pacienteService: PacienteService) { }
 
   ngOnInit() {
