@@ -5,6 +5,9 @@
         <form action="">
           <div class="form-grup">
             <input type="string" name="nom" [(ngModel)]="isap.des" placeholder="Nombre Isapre" class="form-control" autofocus>
+            <div *ngIf="agregado"   class="alert alert-success" role="alert">
+                Isapre agregada
+              </div>
           </div>
           <button class="btn btn-success btn-block" (click)="guardar()">Agregar</button>
         </form>

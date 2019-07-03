@@ -10,11 +10,13 @@ export class GuardarEspecialidadComponent implements OnInit {
  medico:especialidad={
    Nombre:null
  };
+ agregado=false;
   constructor(private especialidadServicio:EspecialidadService) { }
 
   ngOnInit() {
   }
   guardarespe() {
+    this.agregado=true;
     this.especialidadServicio.agregarEspec(this.medico).subscribe(
       res => {
         console.log(res);

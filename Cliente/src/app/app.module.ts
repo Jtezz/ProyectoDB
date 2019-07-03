@@ -34,6 +34,7 @@ import { GuardarIsapreComponent } from './componentes/guardar-isapre/guardar-isa
 import { ConsultaComponent } from './componentes/consulta/consulta.component';
 import { BuscarExamenComponent } from './componentes/buscar-examen/buscar-examen.component';
 import { BuscarHoraComponent } from './componentes/buscar-hora/buscar-hora.component';
+import { NavegadorAdminComponent } from './componentes/navegador-admin/navegador-admin.component';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import { BuscarHoraComponent } from './componentes/buscar-hora/buscar-hora.compo
     GuardarIsapreComponent,
     ConsultaComponent,
     BuscarExamenComponent,
-    BuscarHoraComponent
+    BuscarHoraComponent,
+    NavegadorAdminComponent
   ],
   imports: [
     CommonModule,

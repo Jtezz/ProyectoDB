@@ -7,12 +7,19 @@
             <input type="number" min=0 max=1 name="nom" [(ngModel)]="horam.disponible" placeholder="disponibilidad" class="form-control" autofocus>
           </div>
           <div class="form-grup">
-            <input type="number"  name="nom1" [(ngModel)]="horam.iD_H" placeholder="ID hora" class="form-control" autofocus>
-          </div>
-          <div class="form-grup">
-            <input type="number"  name="nom2" [(ngModel)]="horam.iD_MED" placeholder="ID medico" class="form-control" autofocus>
-          </div>
+              <select [(ngModel)]="horam.iD_H" [ngModelOptions]="{standalone: true}" class="form-grup">
+                  <option *ngFor="let hora of horas" [value]="hora.idHora" placeholder="horas">{{hora.Bloque}}--{{(hora.Fecha) | date}}</option>
+                </select>
+              </div>
+              <div class="form-grup">
+                  <select [(ngModel)]="horam.iD_MED" [ngModelOptions]="{standalone: true}" class="form-grup">
+                      <option *ngFor="let medico of medicos" [value]="medico.idMedico" placeholder="medicos">{{medico.Nombre}}</option>
+                    </select>
+                  </div>
           <button class="btn btn-success btn-block" (click)="guardarH_M()">Agregar</button>
+          <div *ngIf="agregado"   class="alert alert-success" role="alert">
+              Hora agregada
+            </div>
         </form>
       </div>
     </div>

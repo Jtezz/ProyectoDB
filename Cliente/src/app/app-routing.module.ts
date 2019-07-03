@@ -21,6 +21,8 @@ import { GuardarIsapreComponent } from './componentes/guardar-isapre/guardar-isa
 import {ConsultaComponent} from './componentes/consulta/consulta.component'
 import { BuscarExamenComponent } from './componentes/buscar-examen/buscar-examen.component';
 import { BuscarHoraComponent } from './componentes/buscar-hora/buscar-hora.component';
+import { NavegacionComponent } from './componentes/navegacion/navegacion.component';
+import { NavegadorAdminComponent } from './componentes/navegador-admin/navegador-admin.component';
 const routes: Routes = [
 
   {
@@ -102,6 +104,10 @@ const routes: Routes = [
   {
     path:"admin/hora",
     component:BuscarHoraComponent
+  },
+  {
+    path:"admin",
+    component:NavegadorAdminComponent
   }
   ];
 

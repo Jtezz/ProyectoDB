@@ -10,11 +10,13 @@ export class GuardarIsapreComponent implements OnInit {
 isap :isapre={
 des:null
 };
+agregado=false;
   constructor(private GuardarIsapreServicio:IsapresService) { }
 
   ngOnInit() {
   }
   guardar() {
+    this.agregado=true;
     this.GuardarIsapreServicio.agregarEspec(this.isap).subscribe(
       res => {
         console.log(res);

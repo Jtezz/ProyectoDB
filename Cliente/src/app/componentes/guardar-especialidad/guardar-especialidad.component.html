@@ -5,6 +5,9 @@
         <form action="">
           <div class="form-grup">
             <input type="string" name="nom" [(ngModel)]="medico.des" placeholder="Nombre" class="form-control" autofocus>
+            <div *ngIf="agregado"   class="alert alert-success" role="alert">
+                Especialidad agregada
+              </div>
           </div>
           <button class="btn btn-success btn-block" (click)="guardarespe()">Agregar</button>
         </form>

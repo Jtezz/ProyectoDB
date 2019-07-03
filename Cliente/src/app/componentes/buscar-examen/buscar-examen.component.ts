@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {examenService} from 'src/app/servicios/examen.service'
+import {examenService} from 'src/app/servicios/examen.service';
 @Component({
   selector: 'app-buscar-examen',
   templateUrl: './buscar-examen.component.html',

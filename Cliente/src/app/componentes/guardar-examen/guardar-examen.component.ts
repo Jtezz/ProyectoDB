@@ -7,7 +7,7 @@ import {examenService} from 'src/app/servicios/examen.service'
   styleUrls: ['./guardar-examen.component.css']
 })
 export class GuardarExamenComponent implements OnInit {
-
+  agregado=false;
   descripcion :Examen={
     des:null
   };
@@ -16,6 +16,7 @@ export class GuardarExamenComponent implements OnInit {
   ngOnInit() {
   }
   guardar() {
+    this.agregado=true;
     this.GuardarExamenServicio.agregarExamen(this.descripcion).subscribe(
       res => {
         console.log(res);
