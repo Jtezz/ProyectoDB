@@ -122,7 +122,6 @@ export class EspecialidadComponent implements OnInit {
         err =>console.error(err)
   
       );
-  //paso 3 buscar horas segun medico
-      }
+    }
   
 }
