@@ -4,8 +4,10 @@
       <div class="card-body">
         <form action="">
           <div class="form-grup">
-            <input type="number" min=1 name="ID Medico" [(ngModel)]="buscador.ID" placeholder="ID Medico" class="form-control" autofocus>
-          </div>
+            <select [(ngModel)]="buscador.ID" [ngModelOptions]="{standalone: true}" class="form-grup">
+                <option *ngFor="let medico of medicos" [value]="medico.idMedico" placeholder="medicos">{{medico.Nombre}}</option>
+              </select>
+            </div>
           <button class="btn btn-success btn-block" (click)="despedir()">Despedir</button>
           <div *ngIf="despedido"   class="alert alert-success" role="alert">
             Medico Despedido
