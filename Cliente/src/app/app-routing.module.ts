@@ -23,6 +23,7 @@ import { BuscarExamenComponent } from './componentes/buscar-examen/buscar-examen
 import { BuscarHoraComponent } from './componentes/buscar-hora/buscar-hora.component';
 import { NavegacionComponent } from './componentes/navegacion/navegacion.component';
 import { NavegadorAdminComponent } from './componentes/navegador-admin/navegador-admin.component';
+import { ActualizarDispComponent } from './componentes/actualizar-disp/actualizar-disp.component';
 const routes: Routes = [
 
   {
@@ -108,6 +109,10 @@ const routes: Routes = [
   {
     path:"admin",
     component:NavegadorAdminComponent
+  },
+  {
+    path:"admin/Nodisponible",
+    component:ActualizarDispComponent
   }
   ];
 
