@@ -23,7 +23,10 @@ import { BuscarExamenComponent } from './componentes/buscar-examen/buscar-examen
 import { BuscarHoraComponent } from './componentes/buscar-hora/buscar-hora.component';
 import { NavegacionComponent } from './componentes/navegacion/navegacion.component';
 import { NavegadorAdminComponent } from './componentes/navegador-admin/navegador-admin.component';
+import { EditConsultaComponent } from './componentes/edit-consulta/edit-consulta.component';
 import { ActualizarDispComponent } from './componentes/actualizar-disp/actualizar-disp.component';
+import { GuardarConsulExamenComponent } from './componentes/guardar-consul-examen/guardar-consul-examen.component';
+import { SelecPacienteExamenComponent } from './componentes/selec-paciente-examen/selec-paciente-examen.component';
 const routes: Routes = [
 
   {
@@ -51,7 +54,7 @@ const routes: Routes = [
     component: SelectPacienteComponent
   },
   {
-    path:'especialidad',
+    path:'pasiente-habitual/formulario',
     component:EspecialidadComponent
   },
   {
@@ -111,8 +114,20 @@ const routes: Routes = [
     component:NavegadorAdminComponent
   },
   {
+    path:"edit/consulta",
+    component:EditConsultaComponent
+  },
+  {
     path:"admin/Nodisponible",
     component:ActualizarDispComponent
+  },
+  {
+    path:"consulta_examen",
+    component:GuardarConsulExamenComponent
+  },
+  {
+    path:"paso1_examen",
+    component:SelecPacienteExamenComponent
   }
   ];
 

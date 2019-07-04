@@ -1,5 +1,5 @@
 
-<div class="col-md-4 offset-md-4">
+<div class="col-md-4 offset-md-4" *ngIf="aux3==true">
   <div class="card">
     <div class="bg-info text-white float-rigth"> Ingrese sus datos :   <i class="fas fa-user-plus "></i>
  </div>
@@ -15,24 +15,86 @@
           <input type="text" min=1 max=3 name="genero" [(ngModel)]="paciente.genero" placeholder="M/H" class="form-control"> 
         </div>
         <div class="form-grup">
-          <input type="text" name="edad" [(ngModel)]="paciente.tel" placeholder="telefono" class="form-control" >
+          <input type="text" name="edad" [(ngModel)]="paciente.telefono" placeholder="telefono" class="form-control" >
         </div>
         <div class="form-grup">
           <input type="date" name="F_nacimiento" [(ngModel)]="paciente.f_nacimiento" placeholder="Fecha Nacimiento" class="form-control" >
         </div>
         <div class="form-grup">
-          <input type="text" name="Email" [(ngModel)]="paciente.Email" placeholder="Email" class="form-control" >
+          <input type="text" name="Email" [(ngModel)]="paciente.email" placeholder="Email" class="form-control" >
         </div>
         <div class="from-gropu">
           <select [(ngModel)]="paciente.isapre" [ngModelOptions]="{standalone: true}" class="form-grup">
                 <option *ngFor="let isapre of isapres" [value]="isapre.ID_Isapre">{{isapre.Descripcion}}</option>
           </select>
         </div>
-        <a class="btn btn-success btn-lg margin-right" (click)="addPaciente()" routerLink="/especialidad" routerlinkActive="active" role="button">Agregar</a>
+        <button class="btn btn-primary btn-block" (click)="addPaciente()">Registrar</button>
       </form>
+      <button class="btn btn-info btn-block" (click)=getEspec()>Siguiente</button>
     </div>
   </div>
 </div>
+
+<div *ngIf="aux4 == true">
+  <!--- Seleccionar especialidad para buscar medico-->
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+      <div class="card">
+        <div class="card-body">
+          <form action="">
+            <div class="form-grup">
+              <p>Escoja una especialidad:</p>
+              <select [(ngModel)]="buscador.ID" [ngModelOptions]="{standalone: true}" class="form-grup">
+                <option *ngFor="let especialidad of especialidades" [value]="especialidad.idEspecialidad" placeholder="ej:Medicina general">{{especialidad.Nombre_espe}}</option>
+              </select>
+                <button class="btn btn-primary btn-block" (click)="buscarmedicoEspecialidad()">Seleccionar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--- Seleccionar medico para tomar una hora--->
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+      <div class="card">
+        <div class="card-body">
+          <form action="">
+            <div class="form-grup">
+              <p>Escoja un medico:</p>
+              <select [(ngModel)]="buscador2.ID" [ngModelOptions]="{standalone: true}" class="form-grup">
+                <option *ngFor="let medico of medicos" [value]="medico.idMedico" >{{medico.Nombre}}</option>
+              </select>
+                <button class="btn btn-primary btn-block" (click)="escojerMedico()">Seleccionar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!---Seleccionar fecha y hora-->
+  <div class="row" *ngIf="aux2 == true">
+    <div class="col-md-4 offset-md-4">
+      <div class="card">
+        <div class="card-body">
+          <form action="" >
+            <div class="form-grup">
+              <p>Escoja una Hora:</p>
+              <select [(ngModel)]="buscador3.ID" [ngModelOptions]="{standalone: true}" class="form-grup"><!--arreglar problema por que no funcoina--->
+                <option *ngFor="let hora of Horas" [value]="hora.ID_HM" >{{hora.Fecha | date}} -- {{hora.hora}}</option>
+              </select>
+                <button class="btn btn-primary btn-block" (click)=insertarConsulta()>Seleccionar</button>
+                <a class="btn btn-success btn-lg margin-right" routerLink="/consulta" routerlinkActive="active" role="button">Reservar Hora</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 
 
