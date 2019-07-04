@@ -23,6 +23,7 @@ import { BuscarExamenComponent } from './componentes/buscar-examen/buscar-examen
 import { BuscarHoraComponent } from './componentes/buscar-hora/buscar-hora.component';
 import { NavegacionComponent } from './componentes/navegacion/navegacion.component';
 import { NavegadorAdminComponent } from './componentes/navegador-admin/navegador-admin.component';
+import { EditConsultaComponent } from './componentes/edit-consulta/edit-consulta.component';
 import { ActualizarDispComponent } from './componentes/actualizar-disp/actualizar-disp.component';
 const routes: Routes = [
 
@@ -51,7 +52,7 @@ const routes: Routes = [
     component: SelectPacienteComponent
   },
   {
-    path:'especialidad',
+    path:'pasiente-habitual/formulario',
     component:EspecialidadComponent
   },
   {
@@ -109,6 +110,10 @@ const routes: Routes = [
   {
     path:"admin",
     component:NavegadorAdminComponent
+  },
+  {
+    path:"edit/consulta",
+    component:EditConsultaComponent
   },
   {
     path:"admin/Nodisponible",

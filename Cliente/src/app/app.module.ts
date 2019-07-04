@@ -35,6 +35,7 @@ import { ConsultaComponent } from './componentes/consulta/consulta.component';
 import { BuscarExamenComponent } from './componentes/buscar-examen/buscar-examen.component';
 import { BuscarHoraComponent } from './componentes/buscar-hora/buscar-hora.component';
 import { NavegadorAdminComponent } from './componentes/navegador-admin/navegador-admin.component';
+import { EditConsultaComponent } from './componentes/edit-consulta/edit-consulta.component';
 import { ActualizarDispComponent } from './componentes/actualizar-disp/actualizar-disp.component';
 
 
@@ -62,6 +63,7 @@ import { ActualizarDispComponent } from './componentes/actualizar-disp/actualiza
     BuscarExamenComponent,
     BuscarHoraComponent,
     NavegadorAdminComponent,
+    EditConsultaComponent,
     ActualizarDispComponent
   ],
   imports: [

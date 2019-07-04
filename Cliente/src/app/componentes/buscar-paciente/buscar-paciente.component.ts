@@ -17,10 +17,10 @@ export class BuscarPacienteComponent implements OnInit {
     id:'',
     nombre: '',
     genero:'',
-    tel:'',
     isapre:null,
     f_nacimiento: null,
-    Email:''
+    email:'',
+    telefono:''
   };
   public prueba:string='Informarcion de paciente';
 

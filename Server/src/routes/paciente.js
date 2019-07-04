@@ -25,10 +25,11 @@ router.get('/paciente/:id',(req,res) => {
 });
 
 router.post('/paciente',(req,res) =>{
-    const {id,nombre,genero,edad,isapre,f_nacimiento}=req.body;
+    
+    const {id,nombre,genero,telefono,isapre,f_nacimiento,email}=req.body;
     const query=`INSERT INTO paciente (ID_P,nombre,genero,telefono,ISAPRE,F_nacimiento,email) value (?,?,?,?,?,?,?)`;
-    mysqlConnection.query(query,[id,nombre,genero,edad,isapre,f_nacimiento],(err,rows,fields) =>{
-    if(!err){
+    mysqlConnection.query(query,[id,nombre,genero,telefono,isapre,f_nacimiento,email],(err,rows,fields) =>{
+    if(!err){//03-07 miercoles: hacer un alter para cambiar el orden de los atributos email y telefono pa que no lloren  
         console.log('Paciente agregado con exito!');
         res.json({Status: 'Paciente agregado con exito!'});//entrega cada fila de la consulta
     }else{
