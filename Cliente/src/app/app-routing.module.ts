@@ -94,7 +94,7 @@ const routes: Routes = [
     component:GuardarIsapreComponent
   },
   {
-    path:"finalizar",
+    path:"consulta",
     component:ConsultaComponent
   },
   {

@@ -13,7 +13,7 @@ export class HoraComponent implements OnInit {
   Horaagregada = false;
   
   Hora: Horas = {
-    Bloque: ' ',
+    Bloque:null,
     Fecha: null
   }
 
