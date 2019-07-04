@@ -1,5 +1,5 @@
 export interface hora_medicos{
     ID_Med?: number;
     ID_H? : number;
-    Disponible?: number;
+    disponible?: number;
 }

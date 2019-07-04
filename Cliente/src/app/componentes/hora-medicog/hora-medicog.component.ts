@@ -14,7 +14,7 @@ export class HoraMedicogComponent implements OnInit {
   horam : hora_medicos ={
     ID_Med: null,
     ID_H: null,
-    Disponible: null
+    disponible: 1
   };
   medicos:any=[];
   horas:any=[];
