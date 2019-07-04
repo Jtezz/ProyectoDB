@@ -24,6 +24,7 @@ import { BuscarHoraComponent } from './componentes/buscar-hora/buscar-hora.compo
 import { NavegacionComponent } from './componentes/navegacion/navegacion.component';
 import { NavegadorAdminComponent } from './componentes/navegador-admin/navegador-admin.component';
 import { EditConsultaComponent } from './componentes/edit-consulta/edit-consulta.component';
+import { ActualizarDispComponent } from './componentes/actualizar-disp/actualizar-disp.component';
 const routes: Routes = [
 
   {
@@ -113,6 +114,10 @@ const routes: Routes = [
   {
     path:"edit/consulta",
     component:EditConsultaComponent
+  },
+  {
+    path:"admin/Nodisponible",
+    component:ActualizarDispComponent
   }
   ];
 

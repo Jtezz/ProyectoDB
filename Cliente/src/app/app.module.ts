@@ -36,6 +36,7 @@ import { BuscarExamenComponent } from './componentes/buscar-examen/buscar-examen
 import { BuscarHoraComponent } from './componentes/buscar-hora/buscar-hora.component';
 import { NavegadorAdminComponent } from './componentes/navegador-admin/navegador-admin.component';
 import { EditConsultaComponent } from './componentes/edit-consulta/edit-consulta.component';
+import { ActualizarDispComponent } from './componentes/actualizar-disp/actualizar-disp.component';
 
 
 @NgModule({
@@ -62,7 +63,8 @@ import { EditConsultaComponent } from './componentes/edit-consulta/edit-consulta
     BuscarExamenComponent,
     BuscarHoraComponent,
     NavegadorAdminComponent,
-    EditConsultaComponent
+    EditConsultaComponent,
+    ActualizarDispComponent
   ],
   imports: [
     CommonModule,
