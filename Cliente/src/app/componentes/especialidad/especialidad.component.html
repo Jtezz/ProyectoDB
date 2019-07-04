@@ -1,9 +1,8 @@
 <!--- pasasos de toma de hora--->
-<button type="button" class="btn btn-lg btn-secondary margin-right" disabled>1</button>
-<button type="button" class="btn btn-primary btn-lg margin-right" disabled>2</button>
-<button type="button" class="btn btn-secondary btn-lg margin-right" disabled>3</button>
-
 <div *ngIf="aux3==true">
+  <button type="button" class="btn btn-lg btn-secondary margin-right" disabled>1</button>
+  <button type="button" class="btn btn-primary btn-lg margin-right" disabled>2</button>
+  <button type="button" class="btn btn-secondary btn-lg margin-right" disabled>3</button>
   <div class="row">
     <div class="col-md-4 offset-md-4">
       <div class="card">
@@ -36,13 +35,16 @@
         <p>Prevencion: {{item.Isapre}}</p>
         <p>Telefono: {{item.telefono}}</p>
         <p>Email: {{item.Email}}</p>
-        <button class="btn btn-succesful btn-block" (click)="paso2()">Buscar</button>
+        <button class="btn btn-warning btn-block" (click)="paso2()">Siguiente</button>
       </div>
     </div>
   </div>
 </div>
 
 <div *ngIf="aux4 == true">
+  <button type="button" class="btn btn-lg btn-secondary margin-right" disabled>1</button>
+  <button type="button" class="btn btn-secondary btn-lg margin-right" disabled>2</button>
+  <button type="button" class="btn btn-primary btn-lg margin-right" disabled>3</button> 
   <!--- Seleccionar especialidad para buscar medico-->
   <div class="row">
     <div class="col-md-4 offset-md-4">
