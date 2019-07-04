@@ -1,3 +1,18 @@
 <p>
   consulta works!
 </p>
+<div class="cold-md-4" *ngFor="let item of aux">
+  <div class="card text center">
+    <div class="class header bg-primary text-white" >
+      <h2>Consulta Reservada</h2> 
+    </div>
+    <div class="card body ">
+      <h4>Numero de consulta: {{item.ID_consulta}}</h4>
+      <p>Para el dia {{item.Fecha | date}} a las {{item.hora}}</p>
+      <p>A nombre de : {{item.Nombre}}</p>
+      <p>Rut: {{item.ID_P}}</p>
+      <p>Email: {{item.email}}</p>
+      <a class="btn btn-success btn-lg margin-right" routerLink="/especialidad" routerlinkActive="active" role="button">Listo</a>
+    </div>
+  </div>
+</div>

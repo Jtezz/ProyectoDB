@@ -24,9 +24,6 @@ export class PacienteFormComponent implements OnInit {
     Email:null
 
   };
-  aux:buscadorP={
-    id:this.paciente.id
-  }
   isapres:any=[];
 
   constructor(private pacienteService:PacienteService,

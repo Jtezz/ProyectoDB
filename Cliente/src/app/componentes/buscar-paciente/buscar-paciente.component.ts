@@ -2,6 +2,7 @@ import { Component, OnInit ,Input} from '@angular/core';
 
 import{ PacienteService} from '../../servicios/paciente.service';
 import{buscadorP}from '../../modelos/buscadorP';
+import { paciente } from 'src/app/modelos/paciente';
 @Component({
   selector: 'app-buscar-paciente',
   templateUrl: './buscar-paciente.component.html',
@@ -12,7 +13,15 @@ export class BuscarPacienteComponent implements OnInit {
     id:null
   };
   
-  public aux:any=[];
+  public aux:paciente={
+    id:'',
+    nombre: '',
+    genero:'',
+    tel:'',
+    isapre:null,
+    f_nacimiento: null,
+    Email:''
+  };
   public prueba:string='Informarcion de paciente';
 
 
