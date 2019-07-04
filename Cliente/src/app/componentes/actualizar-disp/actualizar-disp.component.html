@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-md-4 offset-md-4">
+    <div class="card">
+      <div class="card-body">
+        <form action="" >
+          <div class="form-grup">
+            <p>Cambiar Disponibilidad:</p>
+            <select [(ngModel)]="Buscador.ID" [ngModelOptions]="{standalone: true}" class="form-grup"><!--arreglar problema por que no funcoina--->
+              <option *ngFor="let hora of HoraMe" [value]="hora.ID_HM" >{{hora.Bloque}} -- {{hora.Fecha | date}} -- {{hora.Nombre}}</option>
+            </select>
+              <button class="btn btn-primary btn-block" (click)=Nodisponible()>Seleccionar</button>
+              <div *ngIf="disponibilidad"   class="alert alert-success" role="alert">
+                Disponibilidad cambiada
+              </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

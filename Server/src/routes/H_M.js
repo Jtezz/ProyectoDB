@@ -42,4 +42,25 @@ router.get('/admin/bm_h_m/:ID',(req,res) => {
     });
 
 });
+router.get('/HorarioMedico',(req,res) => {
+    mysqlConnection.query('select horario_medico.ID_HM,hora.idHora,hora.Bloque,hora.Fecha,medico.Nombre from medico,horario_medico,hora where horario_medico.ID_H=hora.idHora and horario_medico.ID_MED=medico.idMedico and horario_medico.Disponible=1;',(err,rows,fields) =>{
+        if(!err){
+            res.json(rows);//entrega cada fila de la consulta
+        }else{
+            console.log(err);
+        }
+    });
+});
+router.put('/admin/cambiardisp/:ID_HM',(req,res) =>{
+    const {ID_HM}=req.params;
+    const query=`update horario_medico set Disponible=0 where ID_HM=?`;
+    
+    mysqlConnection.query(query,[ID_HM],(err,rows,fields) =>{
+    if(!err){
+        res.json({Status: 'Disponibilidad cambiada!'});//entrega cada fila de la consulta
+    }else{
+        console.log(err);
+    }
+    });
+});
 module.exports=router;
