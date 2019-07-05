@@ -45,6 +45,16 @@ router.delete('/consulta/:id',(req,res) =>{ //eliminar una consulta
     });
 });
 
-
+router.get('/admin/consulta/historial/:id',(req,res) =>{ 
+    const {id}=req.params;
+    const query=`select consulta_medicina.diagnostico from consulta_medicina,consulta where consulta_medicina.ID_C=consulta.ID_Consulta and consulta.ID_Pacient=?;`;
+    mysqlConnection.query(query,[id],(err,rows,fields) =>{
+    if(!err){
+        res.json(rows);
+    }else{
+        console.log(err);
+    }
+    });
+});
 const mysqlConnection=require('../database')//traemos la conexion con la db
 module.exports=router;//para exportar las rutas

@@ -20,6 +20,9 @@ export class ConsultaService {
   getConsultaId(id:buscadorP){
     return this.http.get(`${this.API_URI}/consulta/${id}`);
   }
+  getHistorial(ID:string){
+    return this.http.get(`${this.API_URI}/admin/consulta/historial/${ID}`);
+  }
   
 
 }

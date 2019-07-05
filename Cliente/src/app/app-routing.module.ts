@@ -25,6 +25,7 @@ import { NavegacionComponent } from './componentes/navegacion/navegacion.compone
 import { NavegadorAdminComponent } from './componentes/navegador-admin/navegador-admin.component';
 import { EditConsultaComponent } from './componentes/edit-consulta/edit-consulta.component';
 import { ActualizarDispComponent } from './componentes/actualizar-disp/actualizar-disp.component';
+import { HistorialComponent } from './componentes/historial/historial.component';
 const routes: Routes = [
 
   {
@@ -118,6 +119,10 @@ const routes: Routes = [
   {
     path:"admin/Nodisponible",
     component:ActualizarDispComponent
+  },
+  {
+    path:"admin/historial",
+    component:HistorialComponent
   }
   ];
 
