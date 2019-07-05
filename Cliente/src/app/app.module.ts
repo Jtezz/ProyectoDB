@@ -41,6 +41,7 @@ import { HistorialComponent } from './componentes/historial/historial.component'
 import { GuardarConsulExamenComponent } from './componentes/guardar-consul-examen/guardar-consul-examen.component';
 import { SelecPacienteExamenComponent } from './componentes/selec-paciente-examen/selec-paciente-examen.component';
 import { PacienteExamenComponent } from './componentes/paciente-examen/paciente-examen.component';
+import { UpdateDiagnosticoComponent } from './componentes/update-diagnostico/update-diagnostico.component';
 
 
 @NgModule({
@@ -75,7 +76,8 @@ import { PacienteExamenComponent } from './componentes/paciente-examen/paciente-
     SelecPacienteExamenComponent,
     PacienteExamenComponent,
     HistorialComponent,
-    PacienteExamenComponent
+    PacienteExamenComponent,
+    UpdateDiagnosticoComponent
   ],
   imports: [
     CommonModule,

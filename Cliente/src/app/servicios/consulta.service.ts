@@ -33,5 +33,8 @@ export class ConsultaService {
   getHistorial(id:string){
     return this.http.get(`${this.API_URI}/admin/historial/${id}`);
   }
+  getHistoriales(id:string){
+    return this.http.get(`${this.API_URI}/admin/historiales/${id}`);
+  }
 
 }

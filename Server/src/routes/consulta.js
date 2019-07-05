@@ -79,6 +79,17 @@ router.get('/consulta_examen/mostrar/:ID',(req,res) => {
         }
         });
     });
+    router.get('/admin/historiales/:id',(req,res) =>{ 
+        const {id}=req.params;
+        const query=`select * from consulta_medicina,consulta where consulta_medicina.ID_C=consulta.ID_Consulta and consulta.ID_Pacient=?;`;
+        mysqlConnection.query(query,[id],(err,rows,fields) =>{
+        if(!err){
+            res.json(rows);
+        }else{
+            console.log(err);
+        }
+        });
+    });
 
 
 const mysqlConnection=require('../database')//traemos la conexion con la db

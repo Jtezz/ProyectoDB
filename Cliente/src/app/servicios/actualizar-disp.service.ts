@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 
 import { hora_medicos } from '../modelos/hora_medico';
 import { Observable } from 'rxjs';
+import { up } from '../modelos/model';
 
 @Injectable({
   providedIn: 'root'
@@ -16,5 +17,8 @@ export class ActualizarDispService {
   }
   updatedisponibilidad(ID:number, updatedisponibilidad:hora_medicos): Observable<any>{
     return this.http.put(`${this.API_URI}/admin/cambiardisp/${ID}`,updatedisponibilidad);
+  }
+  Diagnostico(prob:up): Observable<any>{
+    return this.http.put(`${this.API_URI}/admin/diagnostico`,prob);
   }
 }

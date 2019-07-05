@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-md-4 offset-md-4">
+    <div class="card">
+      <div class="card-body">
+        <form action="">
+          <div class="form-grup">
+            <input type="string" name="nom" [(ngModel)]="buscador.id" placeholder="RUT paciente" class="form-control" autofocus>
+            <div *ngIf="agregado"   class="alert alert-success" role="alert">
+                Especialidad agregada
+              </div>
+          </div>
+          <button class="btn btn-success btn-block" (click)="Buscar()">Buscar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4 offset-md-4">
+    <div class="card">
+      <div class="card-body">
+        <form action="">
+          <div class="form-grup">
+            <input type="string" name="nom" [(ngModel)]="salvador.algo" placeholder="Diagnostico" class="form-control" autofocus>
+            <div *ngIf="agregado"   class="alert alert-success" role="alert">
+                Especialidad agregada
+              </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4 offset-md-4">
+    <div class="card">
+      <div class="card-body">
+        <form action="">
+          <div class="form-grup">
+            <p>Escoja una especialidad:</p>
+            <select [(ngModel)]="salvador.ID" [ngModelOptions]="{standalone: true}" class="form-grup">
+              <option *ngFor="let especialidad of aux" [value]="especialidad.ID_CM" placeholder="">{{especialidad.Diagnostico}}</option>
+            </select>
+              <button class="btn btn-primary btn-block" (click)="update()">Seleccionar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

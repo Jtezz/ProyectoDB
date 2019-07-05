@@ -75,4 +75,16 @@ router.get('/admin/buscar_Horarios_Medico/:ID',(req,res) =>{//solo utilizada par
     }
     });
 });
+router.put('/admin/diagnostico',(req,res) =>{
+    const {algo,ID}=req.body;
+    const query=`update consulta_medicina set Diagnostico=? where ID_CM=?`;
+    
+    mysqlConnection.query(query,[algo,ID],(err,rows,fields) =>{
+    if(!err){
+        res.json({Status: 'Diagnostico cambiado!'});//entrega cada fila de la consulta
+    }else{
+        console.log(err);
+    }
+    });
+});
 module.exports=router;
