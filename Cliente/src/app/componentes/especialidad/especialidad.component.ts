@@ -81,16 +81,17 @@ export class EspecialidadComponent implements OnInit {
       this.medicoService.buscarEspec(this.buscador.ID).subscribe(//guarda en buscador.Id el Id de la especialidad
         res => {
           this.medicos=res;
-          console.log(this.paciente)
-
+          console.log(this.medicos);
         },
         err => console.log(err)
       )
     }
     //paso 3 busca el horario del medico 
     //arreglar , tenemos un problema con la consulta de las horas y como las devuelve 01-07-2019
+    
     escojerMedico(){
-      this.buscarHorarioMedicoService.buscarmedH_M(this.buscador2.ID).subscribe(//guarda en buscador2.Id el id del medico
+      this.aux2=true;
+      this.buscarHorarioMedicoService.Buscar_Horario_Medico(this.buscador2.ID).subscribe(//guarda en buscador2.Id el id del medico
         res =>{
           this.aux2=true;
           this.Horas=res;
@@ -100,18 +101,22 @@ export class EspecialidadComponent implements OnInit {
         err=>console.log(err)
       )
     }
-  
     insertarConsulta(){
       this.consulta.MH=this.buscador3.ID;
       this.consulta.pacient=this.paciente.id;
       this.consultaService.postConsulta(this.consulta).subscribe(
         res=>{
+          console.log(this.buscador3);
+          console.log(this.consulta);
           console.log(res);
         },
         err=>console.log(err)
       )
     }
     //busca el paciente segun su id
+    prueba1(){
+      console.log(this.buscador2.ID);
+    }
     getBuscarPaciente(){
       this.pacienteService.getBuscarPacienteAPI(this.paciente.id).subscribe(
         res => {
@@ -120,7 +125,6 @@ export class EspecialidadComponent implements OnInit {
           console.log(this.aux);
         },
         err =>console.error(err)
-  
       );
     }
   

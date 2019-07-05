@@ -12,7 +12,7 @@ router.get('/consultas',(req,res) => {
     });
 });
 router.get('/consulta',(req,res) => {
-    const query=`select * from hora,(select * from horario_medico,(select * from paciente,(select * from consulta,(select MAX(ID_consulta) as maxi from consulta)as aux where ID_consulta=maxi) as consulta1 where  paciente.ID_P=consulta1.ID_Pacient)as paciente1 where paciente1.ID_MH=horario_medico.ID_HM)as aux where aux.ID_H=hora.idHora;`
+    const query=`select * from hora,(select * from horario_medico,(select * from paciente,(select * from consulta,(select MAX(ID_consulta) as maxi from consulta)as aux where ID_consulta=maxi) as consulta1 where  paciente.ID_P=consulta1.ID_Pacient)as paciente1 where paciente1.ID_MH=horario_medico.ID_HM)as aux where aux.ID_H=hora.idHora`
     mysqlConnection.query(query,(err,rows,fields) =>{
         if(!err){
             res.json(rows);//entrega cada fila de la consulta
