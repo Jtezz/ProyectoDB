@@ -33,6 +33,8 @@ export class ConsultaService {
   agregarConsulta_examen(cons_ex:cons_ex){
     return this.http.post(`${this.API_URI}/agregar/consulta_examen/`,cons_ex)
   }
-  
+  getHistorial(id:string){
+    return this.http.get(`${this.API_URI}/admin/historial/${id}`);
+  }
 
 }
