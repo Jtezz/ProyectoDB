@@ -80,5 +80,6 @@ router.get('/consulta_examen/mostrar/:ID',(req,res) => {
         });
     });
 
+
 const mysqlConnection=require('../database')//traemos la conexion con la db
 module.exports=router;//para exportar las rutas

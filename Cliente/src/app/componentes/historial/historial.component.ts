@@ -34,4 +34,5 @@ export class HistorialComponent implements OnInit {
      err => console.log(err)
    )
  }
+
 }
