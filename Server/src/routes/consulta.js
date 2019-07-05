@@ -23,7 +23,7 @@ router.get('/consulta',(req,res) => {
 });
 router.post('/agregar/consulta/',(req,res) =>{ //agregar una consulta
     const {MH,pacient,Tipo}=req.body;
-    const query=`insert into consulta(ID_MH,ID_Pacient,ID_tipo) value(?,?,?)`;
+    const query=`insert into consulta (ID_MH,ID_Pacient,ID_Tipo) values (?,?,?)`;
     mysqlConnection.query(query,[MH,pacient,Tipo],(err,rows,fields) =>{
     if(!err){
         res.json({Status: 'Consulta agregar con exito!'});
