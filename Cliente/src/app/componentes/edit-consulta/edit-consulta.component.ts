@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConsultaService } from 'src/app/servicios/consulta.service';
 
 @Component({
   selector: 'app-edit-consulta',
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./edit-consulta.component.css']
 })
 export class EditConsultaComponent implements OnInit {
-
-  constructor() { }
-
+  id:number=null;
+  constructor(private consultaService:ConsultaService) { }
   ngOnInit() {
   }
-
+  EliminarConsulta(){
+    this.consultaService.EliminarConsulta(this.id).subscribe(
+      res=>{
+        console.log(res)
+      },
+      err=>console.log(err)
+    )
+  }
+  print(){
+    console.log(this.id)
+  }
 }

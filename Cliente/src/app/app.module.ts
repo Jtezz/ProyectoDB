@@ -38,6 +38,9 @@ import { NavegadorAdminComponent } from './componentes/navegador-admin/navegador
 import { EditConsultaComponent } from './componentes/edit-consulta/edit-consulta.component';
 import { ActualizarDispComponent } from './componentes/actualizar-disp/actualizar-disp.component';
 import { HistorialComponent } from './componentes/historial/historial.component';
+import { GuardarConsulExamenComponent } from './componentes/guardar-consul-examen/guardar-consul-examen.component';
+import { SelecPacienteExamenComponent } from './componentes/selec-paciente-examen/selec-paciente-examen.component';
+import { PacienteExamenComponent } from './componentes/paciente-examen/paciente-examen.component';
 
 
 @NgModule({
@@ -64,9 +67,13 @@ import { HistorialComponent } from './componentes/historial/historial.component'
     BuscarExamenComponent,
     BuscarHoraComponent,
     NavegadorAdminComponent,
+    ActualizarDispComponent,
+    GuardarConsulExamenComponent,
     EditConsultaComponent,
     ActualizarDispComponent,
-    HistorialComponent
+    HistorialComponent,
+    SelecPacienteExamenComponent,
+    PacienteExamenComponent
   ],
   imports: [
     CommonModule,

@@ -17,8 +17,11 @@ export class H_MgService {
   buscarH_M(HM : number){
     return this.http.get(`${this.API_URI}/admin/b_h_m/${HM}`);
   }
-  buscarmedH_M(HM : number){//medico horario segun su id
+  buscarmedH_M(HM : number){
     return this.http.get(`${this.API_URI}/admin/bm_h_m/${HM}`);
-
   }
+  Buscar_Horario_Medico(HM: number){//medico horario segun su id
+    return this.http.get(`${this.API_URI}/admin/buscar_Horarios_Medico/${HM}`);
+  }
+  
 }
