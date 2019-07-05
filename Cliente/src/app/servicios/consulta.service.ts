@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {consulta} from '../modelos/consulta';
 import { buscadorP } from '../modelos/buscadorP';
+import {cons_ex} from '../modelos/consulta_examen'
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,12 @@ export class ConsultaService {
   }
   getConsultaId(id:buscadorP){
     return this.http.get(`${this.API_URI}/consulta/${id}`);
+  }
+  getConsulta_id(id:number){
+    return this.http.get(`${this.API_URI}/consulta_examen/mostrar/${id}`);
+  }
+  agregarConsulta_examen(cons_ex:cons_ex){
+    return this.http.post(`${this.API_URI}/agregar/consulta_examen/`,cons_ex)
   }
   
 

@@ -1,44 +1,38 @@
-<!--- pasasos de toma de hora--->
-
-<div *ngIf="aux3==true">
-  <div class="row">
-    <div class="col-md-4 offset-md-4">
-      <div class="card">
-        <div class="card-body">
-          <form action="">
-            <div class="form-grup">
-              <p>Ingrese su rut:</p>
-              <input type="text" name="Rut" [(ngModel)]= "paciente.id" placeholder="ej:123456789-0" class="form-control" autofocus>
-            </div>
-            <button class="btn btn-primary btn-block" (click)="getBuscarPaciente()">Buscar</button>
-          </form>
+<div class="col-md-4 offset-md-4" *ngIf="aux3==true">
+  <div class="card">
+    <div class="bg-info text-white float-rigth"> Ingrese sus datos :   <i class="fas fa-user-plus "></i>
+ </div>
+    <div class="card-body">
+      <form action="">
+        <div class="form-grup">
+        <input type="text" name="rut" [(ngModel)]="paciente.id" placeholder="ej: 12345678-9" class="form-control" autofocus>
         </div>
-      </div>
+        <div class="form-grup">
+          <input type="text" min=1 max=3 name="Nombre" [(ngModel)]="paciente.nombre" placeholder="Nombre completo" class="form-control">
+        </div>
+        <div class="form-grup">
+          <input type="text" min=1 max=3 name="genero" [(ngModel)]="paciente.genero" placeholder="M/H" class="form-control"> 
+        </div>
+        <div class="form-grup">
+          <input type="text" name="edad" [(ngModel)]="paciente.telefono" placeholder="telefono" class="form-control" >
+        </div>
+        <div class="form-grup">
+          <input type="date" name="F_nacimiento" [(ngModel)]="paciente.f_nacimiento" placeholder="Fecha Nacimiento" class="form-control" >
+        </div>
+        <div class="form-grup">
+          <input type="text" name="Email" [(ngModel)]="paciente.email" placeholder="Email" class="form-control" >
+        </div>
+        <div class="from-gropu">
+          <select [(ngModel)]="paciente.isapre" [ngModelOptions]="{standalone: true}" class="form-grup">
+                <option *ngFor="let isapre of isapres" [value]="isapre.ID_Isapre">{{isapre.Descripcion}}</option>
+          </select>
+        </div>
+        <button class="btn btn-primary btn-block" (click)="addPaciente()">Registrar</button>
+      </form>
+      <button class="btn btn-info btn-block" (click)=getEspec()>Siguiente</button>
     </div>
-  </div>
-  <!--- Tarejeta de paciente--->
-
-  <div class="cold-md-4" *ngFor="let item of aux">
-    <div class="card text center">
-      <div class="class header bg-primary text-white" >
-        {{item.Nombre}}
-        <button class="btn btn-secondary float-right">
-        <i class="fas fa-user-edit "></i>
-        </button>
-      </div>
-      <div class="card body ">
-        <p>Rut: {{item.ID_P}}</p>
-        <p>Genero: {{item.Genero}}</p>
-        <p>Fecha de nacmiento: {{item.F_nacimiento | date}}</p>
-        <p>Prevencion: {{item.Isapre}}</p>
-        <p>Telefono: {{item.telefono}}</p>
-        <p>Email: {{item.Email}}</p>
-        <button class="btn btn-succesful btn-block" (click)="paso2()">Buscar</button>
-      </div>
     </div>
-  </div>
-</div>
-
+  </div>  
 <div *ngIf="aux4 == true">
   <!--- Seleccionar especialidad para buscar medico-->
   <div class="row">
@@ -57,8 +51,7 @@
         </div>
       </div>
     </div>
-  </div>
-
+  </div>>
   <!--- Seleccionar medico para tomar una hora--->
   <div class="row">
     <div class="col-md-4 offset-md-4">
@@ -76,7 +69,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div>>
   <!---Seleccionar fecha y hora-->
   <div class="row" *ngIf="aux2 == true">
     <div class="col-md-4 offset-md-4">
@@ -96,7 +89,6 @@
       </div>
     </div>
   </div>
-</div>
 <div class="row" *ngIf="aux6 == true">
   <div class="col-md-4 offset-md-4">
     <div class="card">
@@ -130,6 +122,4 @@
       </div>
     </div>
   </div>
-
-
 

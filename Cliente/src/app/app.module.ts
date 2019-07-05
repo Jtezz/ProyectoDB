@@ -39,6 +39,7 @@ import { EditConsultaComponent } from './componentes/edit-consulta/edit-consulta
 import { ActualizarDispComponent } from './componentes/actualizar-disp/actualizar-disp.component';
 import { GuardarConsulExamenComponent } from './componentes/guardar-consul-examen/guardar-consul-examen.component';
 import { SelecPacienteExamenComponent } from './componentes/selec-paciente-examen/selec-paciente-examen.component';
+import { PacienteExamenComponent } from './componentes/paciente-examen/paciente-examen.component';
 
 
 @NgModule({
@@ -69,6 +70,7 @@ import { SelecPacienteExamenComponent } from './componentes/selec-paciente-exame
     GuardarConsulExamenComponent,
     EditConsultaComponent,
     SelecPacienteExamenComponent,
+    PacienteExamenComponent,
   ],
   imports: [
     CommonModule,
