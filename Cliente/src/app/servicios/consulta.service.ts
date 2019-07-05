@@ -16,10 +16,13 @@ export class ConsultaService {
     return this.http.post(`${this.API_URI}/agregar/consulta/`,consulta);
   }
   getConsulta(){
-    return this.http.get(`${this.API_URI}/consulta`)
+    return this.http.get(`${this.API_URI}/consulta`);
   }
   getConsultaId(id:buscadorP){
     return this.http.get(`${this.API_URI}/consulta/${id}`);
+  }
+  EliminarConsulta(id:number){
+    return this.http.delete(`${this.API_URI}/consulta/${id}`);
   }
   getConsulta_id(id:number){
     return this.http.get(`${this.API_URI}/consulta_examen/mostrar/${id}`);
