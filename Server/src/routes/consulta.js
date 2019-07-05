@@ -44,6 +44,30 @@ router.delete('/consulta/:id',(req,res) =>{ //eliminar una consulta
     }
     });
 });
+router.get('/consulta_examen/mostrar/:ID',(req,res) => {
+    const {ID}=req.params;
+    mysqlConnection.query('select ID_consulta from consulta where ID_Tipo=2 and ID_MH=?',[ID],(err,rows,fields) =>{
+        //if(row){
+          //  res. ('No esta en la base de datos...!');
+        //}
+        if(!err){
+            res.json(rows);//entrega cada fila de la consulta
+        }else{
+            console.log(err);
+        }
+    });
+    });
+    router.post('/agregar/consulta_examen/',(req,res) =>{ //agregar una consulta
+        const {ID_ex,ID_c}=req.body;
+        const query=`insert into consulta_examen(ID_Examen,ID_Con) value(?,?)`;
+        mysqlConnection.query(query,[ID_ex,ID_c],(err,rows,fields) =>{
+        if(!err){
+            res.json({Status: 'Consulta agregar con exito!'});
+        }else{
+            console.log(err);
+        }
+        });
+    });
 
 
 const mysqlConnection=require('../database')//traemos la conexion con la db

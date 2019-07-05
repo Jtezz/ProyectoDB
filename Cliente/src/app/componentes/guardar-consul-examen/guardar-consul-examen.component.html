@@ -1,0 +1,135 @@
+<!--- pasasos de toma de hora--->
+
+<div *ngIf="aux3==true">
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+      <div class="card">
+        <div class="card-body">
+          <form action="">
+            <div class="form-grup">
+              <p>Ingrese su rut:</p>
+              <input type="text" name="Rut" [(ngModel)]= "paciente.id" placeholder="ej:123456789-0" class="form-control" autofocus>
+            </div>
+            <button class="btn btn-primary btn-block" (click)="getBuscarPaciente()">Buscar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--- Tarejeta de paciente--->
+
+  <div class="cold-md-4" *ngFor="let item of aux">
+    <div class="card text center">
+      <div class="class header bg-primary text-white" >
+        {{item.Nombre}}
+        <button class="btn btn-secondary float-right">
+        <i class="fas fa-user-edit "></i>
+        </button>
+      </div>
+      <div class="card body ">
+        <p>Rut: {{item.ID_P}}</p>
+        <p>Genero: {{item.Genero}}</p>
+        <p>Fecha de nacmiento: {{item.F_nacimiento | date}}</p>
+        <p>Prevencion: {{item.Isapre}}</p>
+        <p>Telefono: {{item.telefono}}</p>
+        <p>Email: {{item.Email}}</p>
+        <button class="btn btn-succesful btn-block" (click)="paso2()">Buscar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="aux4 == true">
+  <!--- Seleccionar especialidad para buscar medico-->
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+      <div class="card">
+        <div class="card-body">
+          <form action="">
+            <div class="form-grup">
+              <p>Escoja una especialidad:</p>
+              <select [(ngModel)]="buscador.ID" [ngModelOptions]="{standalone: true}" class="form-grup">
+                <option *ngFor="let especialidad of especialidades" [value]="especialidad.idEspecialidad" placeholder="ej:Medicina general">{{especialidad.Nombre_espe}}</option>
+              </select>
+                <button class="btn btn-primary btn-block" (click)="buscarmedicoEspecialidad()">Seleccionar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--- Seleccionar medico para tomar una hora--->
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+      <div class="card">
+        <div class="card-body">
+          <form action="">
+            <div class="form-grup">
+              <p>Escoja un medico:</p>
+              <select [(ngModel)]="buscador2.ID" [ngModelOptions]="{standalone: true}" class="form-grup">
+                <option *ngFor="let medico of medicos" [value]="medico.idMedico" >{{medico.Nombre}}</option>
+              </select>
+                <button class="btn btn-primary btn-block" (click)="escojerMedico()">Seleccionar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!---Seleccionar fecha y hora-->
+  <div class="row" *ngIf="aux2 == true">
+    <div class="col-md-4 offset-md-4">
+      <div class="card">
+        <div class="card-body">
+          <form action="" >
+            <div class="form-grup">
+              <p>Escoja una Hora:</p>
+              <select [(ngModel)]="buscador3.ID" [ngModelOptions]="{standalone: true}" class="form-grup"><!--arreglar problema por que no funcoina--->
+                <option *ngFor="let hora of Horas" [value]="hora.ID_HM" >{{hora.Fecha | date}} -- {{hora.Bloque}}</option>
+              </select>
+                <button class="btn btn-primary btn-block" (click)=insertarConsulta()>Seleccionar</button>
+                <button class="btn btn-primary btn-block" (click)=buscarConsulta()>Buscar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row" *ngIf="aux6 == true">
+  <div class="col-md-4 offset-md-4">
+    <div class="card">
+      <div class="card-body">
+        <form action="" >
+          <div class="form-grup">
+            <p>Escoja una consulta:</p>
+            <select [(ngModel)]="salvador.ID_c" [ngModelOptions]="{standalone: true}" class="form-grup"><!--arreglar problema por que no funcoina--->
+              <option *ngFor="let horario of consul" [value]="horario.ID_consulta" >{{horario.ID_consulta}}</option>
+            </select>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row" *ngIf="aux5 == true">
+  <div class="col-md-4 offset-md-4">
+    <div class="card">
+      <div class="card-body">
+        <form action="" >
+          <div class="form-grup">
+            <p>Escoja un Examen:</p>
+            <select [(ngModel)]="salvador.ID_ex" [ngModelOptions]="{standalone: true}" class="form-grup"><!--arreglar problema por que no funcoina--->
+              <option *ngFor="let examen of Examenes" [value]="examen.ID_Examen" >{{examen.Descripcion}}</option>
+            </select>
+              <button class="btn btn-primary btn-block" (click)=agregarConsulta()>Seleccionar</button>
+              <a class="btn btn-success btn-lg margin-right" routerLink="/consulta" routerlinkActive="active" role="button">Reservar Hora</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+

@@ -25,6 +25,9 @@ import { NavegacionComponent } from './componentes/navegacion/navegacion.compone
 import { NavegadorAdminComponent } from './componentes/navegador-admin/navegador-admin.component';
 import { EditConsultaComponent } from './componentes/edit-consulta/edit-consulta.component';
 import { ActualizarDispComponent } from './componentes/actualizar-disp/actualizar-disp.component';
+import { GuardarConsulExamenComponent } from './componentes/guardar-consul-examen/guardar-consul-examen.component';
+import { SelecPacienteExamenComponent } from './componentes/selec-paciente-examen/selec-paciente-examen.component';
+import { PacienteExamenComponent } from './componentes/paciente-examen/paciente-examen.component';
 const routes: Routes = [
 
   {
@@ -118,6 +121,18 @@ const routes: Routes = [
   {
     path:"admin/Nodisponible",
     component:ActualizarDispComponent
+  },
+  {
+    path:"consulta_examen",
+    component:GuardarConsulExamenComponent
+  },
+  {
+    path:"paso1_examen",
+    component:SelecPacienteExamenComponent
+  },
+  {
+    path:"paciente_examen/add",
+    component:PacienteExamenComponent
   }
   ];
 

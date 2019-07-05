@@ -11,14 +11,15 @@ import {MedicoService} from 'src/app/servicios/medico.service';
 import{EspecialidadService} from '../../servicios/especialidad.service';
 import{ConsultaService}from'../../servicios/consulta.service';
 import { consulta } from 'src/app/modelos/consulta';
+import {cons_ex} from 'src/app/modelos/consulta_examen'
+import {examenService} from 'src/app/servicios/examen.service'
 
 @Component({
-  selector: 'app-paciente-form',
-  templateUrl: './paciente-form.component.html',
-  styleUrls: ['./paciente-form.component.css']
+  selector: 'app-paciente-examen',
+  templateUrl: './paciente-examen.component.html',
+  styleUrls: ['./paciente-examen.component.css']
 })
-export class PacienteFormComponent implements OnInit {
-
+export class PacienteExamenComponent implements OnInit {
   paciente:paciente={//paciente del tipo paciente
     id: '',
     nombre: '',
@@ -28,13 +29,23 @@ export class PacienteFormComponent implements OnInit {
     f_nacimiento: null,
     email:null
   };
+  salvador:cons_ex={
+    ID_ex:null,
+    ID_c:null
+  };
+  aux5:any=false;
+  aux6:any=false;
+
+  consul:any=[];
+  Examenes:any=[];
   isapres:any=[];
   constructor(private pacienteService:PacienteService,
               private isapreService:IsapresService,
               private especialidadesService:EspecialidadService,
               private medicoService:MedicoService,
               private buscarHorarioMedicoService:H_MgService,
-              private consultaService:ConsultaService) { }
+              private consultaService:ConsultaService,
+              private ExamenService:examenService) { }
 
   ngOnInit() {
     this.isapreService.getIsapres().subscribe(
@@ -44,7 +55,16 @@ export class PacienteFormComponent implements OnInit {
       },
       err =>console.error(err)
     )
-    
+    this.ExamenService.getExamen().subscribe(
+      res=>{
+        this.Examenes=res; 
+        console.log(res);
+        console.log(this.Examenes);
+      },
+      err =>console.error(err)
+      
+    )
+  
   }
   addPaciente(){
     this.pacienteService.postPaciente(this.paciente).subscribe(
@@ -115,9 +135,27 @@ export class PacienteFormComponent implements OnInit {
     }
   
     insertarConsulta(){
+      this.aux6=true;
       this.consulta.MH=this.buscador3.ID;
       this.consulta.pacient=this.paciente.id;
       this.consultaService.postConsulta(this.consulta).subscribe(
+        res=>{
+          console.log(res);
+        },
+        err=>console.log(err)
+      )
+    }
+    buscarConsulta(){
+      this.aux5=true;
+      this.consultaService.getConsulta_id(this.buscador3.ID).subscribe(
+        res=>{
+          this.consul=res;
+        },
+        err=>console.log(err)
+      )
+    }
+    agregarConsulta(){
+      this.consultaService.agregarConsulta_examen(this.salvador).subscribe(
         res=>{
           console.log(res);
         },
