@@ -1,0 +1,21 @@
+<div class="col-md-4 offset-md-4">
+  <div class="card">
+    <div class="card-body">
+      <form action="">
+        <div class="form-grup">
+          <input type="text" name="id" [(ngModel)]="ID.id" placeholder="Rut paciente" class="form-control" autofocus>
+        </div>
+        <button class="btn btn-success btn-block" (click)="gethistorial()">Buscar Historial</button>
+      </form>
+    </div>
+  </div>
+ </div>
+ 
+ <div class="card" *ngIf="histo" >
+  <div class="card-header">
+    Historial
+  </div>
+  <ul class="list-group list-group-flush" *ngFor="let dis of historial">
+    <li class="list-group-item"> {{dis.diagnostico}} </li>
+  </ul>
+ </div>
