@@ -63,4 +63,16 @@ router.put('/admin/cambiardisp/:ID_HM',(req,res) =>{
     }
     });
 });
+router.get('/admin/buscar_Horarios_Medico/:ID',(req,res) =>{//solo utilizada para bd con Hora.hora y no Hora.bloque
+    const {ID}=req.params;
+    const query=`select horario_medico.ID_HM,hora.idHora,hora.bloque,hora.Fecha,medico.Nombre from horario_medico,medico,hora,(select * from horario_medico where horario_medico.ID_MED=?) AS com where com.ID_H=hora.idHora and com.ID_MED=medico.idMedico and horario_medico.ID_H=hora.idHora and horario_medico.Disponible=1`;
+    
+    mysqlConnection.query(query,[ID],(err,rows,fields) =>{
+    if(!err){
+        res.json(rows);
+    }else{
+        console.log(err);
+    }
+    });
+});
 module.exports=router;

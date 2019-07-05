@@ -19,7 +19,6 @@ export class ConsultaComponent implements OnInit {
       },
       err =>console.error(err)
     )
-
   };
 
 }

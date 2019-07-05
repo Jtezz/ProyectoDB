@@ -34,7 +34,7 @@
         <p>Fecha de nacmiento: {{item.F_nacimiento | date}}</p>
         <p>Prevencion: {{item.Isapre}}</p>
         <p>Telefono: {{item.telefono}}</p>
-        <p>Email: {{item.Email}}</p>
+        <p>Email: {{item.email}}</p>
         <button class="btn btn-warning btn-block" (click)="paso2()">Siguiente</button>
       </div>
     </div>
@@ -91,10 +91,10 @@
             <div class="form-grup">
               <p>Escoja una Hora:</p>
               <select [(ngModel)]="buscador3.ID" [ngModelOptions]="{standalone: true}" class="form-grup"><!--arreglar problema por que no funcoina--->
-                <option *ngFor="let hora of Horas" [value]="hora.ID_HM" >{{hora.Fecha | date}} -- {{hora.hora}}</option>
+                <option *ngFor="let hora of Horas" [value]="hora.ID_HM" >{{hora.Fecha | date}} -- {{hora.bloque}}</option>
               </select>
-                <button class="btn btn-primary btn-block" (click)=insertarConsulta()>Seleccionar</button>
-                <a class="btn btn-success btn-lg margin-right" routerLink="/consulta" routerlinkActive="active" role="button">Reservar Hora</a>
+                <button class="btn btn-primary btn-block" (click)="insertarConsulta()">Seleccionar</button>
+                <a class="btn btn-success btn-lg margin-right" routerLink="/consulta"  routerlinkActive="active" role="button">Reservar Hora</a>
             </div>
           </form>
         </div>

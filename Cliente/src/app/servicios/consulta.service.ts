@@ -20,6 +20,8 @@ export class ConsultaService {
   getConsultaId(id:buscadorP){
     return this.http.get(`${this.API_URI}/consulta/${id}`);
   }
-  
+  EliminarConsulta(id:number){
+    return this.http.delete(`${this.API_URI}/consulta/${id}`);
+  }
 
 }
